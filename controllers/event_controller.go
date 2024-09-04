@@ -86,12 +86,12 @@ func EditAnEvent(c *fiber.Ctx) error {
 	}
 
 	update := bson.M{
-		"Title":       event.Title,
-		"Description": event.Description,
-		"Date":        event.Date,
-		"Time":        event.Time,
-		"Location":    event.Location,
-		"Amount":      event.Amount,
+		"title":       event.Title,
+		"description": event.Description,
+		"date":        event.Date,
+		"time":        event.Time,
+		"location":    event.Location,
+		"amount":      event.Amount,
 	}
 
 	result, err := eventCollection.UpdateOne(ctx, bson.M{"_id": objId}, bson.M{"$set": update})
